@@ -18,7 +18,7 @@ ENV HOME=/home/node
 ARG APP_HOME=/home/node/srv
 WORKDIR $APP_HOME
 
-RUN git clone --depth 1 https://github.com/alvarcarto/url-to-pdf-api . \
+RUN git clone --depth 1 https://github.com/tomasc/url-to-pdf-api . \
   && npm install --only=production
 
 HEALTHCHECK CMD curl -I http://localhost:9000/

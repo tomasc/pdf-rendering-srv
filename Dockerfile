@@ -22,7 +22,8 @@ RUN chown -R app:app $HOME
 RUN pwd
 # Change to the app user.
 USER app
-RUN git clone https://github.com/alvarcarto/url-to-pdf-api pdf-rendering-srv
+# use our own fork that return complete HTML of captured page
+RUN git clone https://github.com/tomasc/url-to-pdf-api pdf-rendering-srv
 WORKDIR $APP_HOME
 RUN npm install --only=prod
 
